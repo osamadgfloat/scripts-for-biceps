@@ -255,7 +255,7 @@ resource vmName_extension 'Microsoft.Compute/virtualMachines/extensions@2018-06-
 
 resource vmExtension 'Microsoft.Compute/virtualMachines/extensions@2018-06-01' = {
   parent: vm
-  name: 'installTools'
+  name: 'install'
   location: location
   properties: {
     publisher: 'Microsoft.Compute'
@@ -264,11 +264,11 @@ resource vmExtension 'Microsoft.Compute/virtualMachines/extensions@2018-06-01' =
     autoUpgradeMinorVersion: true
     settings: {
       fileUris: [
-        'https://github.com/osamadgfloat/scripts-for-biceps.git'
+        'https://github.com/osamadgfloat/scripts-for-biceps/blob/main/installTools.ps1'
       ]
     }
     protectedSettings: {
-      commandToExecute: 'powershell -ExecutionPolicy Unrestricted -File .\\installTools.ps1'
+      commandToExecute: 'powershell -ExecutionPolicy Unrestricted -File installTools.ps1'
     }
   }
 }
