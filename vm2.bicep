@@ -264,7 +264,7 @@ resource vmExtension 'Microsoft.Compute/virtualMachines/extensions@2018-06-01' =
     autoUpgradeMinorVersion: true
     settings: {
       fileUris: [
-        'https://aka.ms/installazurecliwindows'
+        'https://github.com/osamadgfloat/scripts-for-biceps.git'
       ]
     }
     protectedSettings: {
