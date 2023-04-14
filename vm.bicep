@@ -70,6 +70,8 @@ param vmName string = 'HSO-VM'
 ])
 param securityType string = 'TrustedLaunch'
 
+// param captureName string
+
 var storageAccountName = 'bootdiags${uniqueString(resourceGroup().id)}'
 var nicName = 'myVMNic'
 var addressPrefix = '10.0.0.0/16'
@@ -272,5 +274,29 @@ resource vmExtension 'Microsoft.Compute/virtualMachines/extensions@2018-06-01' =
     }
   }
 }
+
+// resource vmExtension 'Microsoft.Compute/virtualMachines/extensions@2022-11-01' = {
+//   parent: vm
+//   name: 'capture'
+//   location: location
+//   properties: {
+//     publisher: 'Microsoft.Azure.Extensions'
+//     type: captureName
+//     typeHandlerVersion: '1.2'
+//     autoUpgradeMinorVersion: true
+//     settings: {
+//       overwriteVhds: true
+//     }
+//     protectedSettings: {
+//       storageAccountName: 'bootdiags${uniqueString(resourceGroup().id)}'
+//       storageAccountKey: '<storage_account_key>'
+//       containerName: 'hso-111'
+//       captureNamePrefix: captureName
+//     }
+//   }
+//   // dependsOn: [
+//   //   'Microsoft.Compute/virtualMachines/${vmName}'
+//   // ]
+// }
 
 output hostname string = publicIp.properties.dnsSettings.fqdn
