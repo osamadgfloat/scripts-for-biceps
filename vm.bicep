@@ -270,7 +270,7 @@ resource vmExtension 'Microsoft.Compute/virtualMachines/extensions@2018-06-01' =
       ]
     }
     protectedSettings: {
-      commandToExecute: 'powershell -ExecutionPolicy Unrestricted -File install-dotnetcore.ps1'
+      commandToExecute: 'powershell -ExecutionPolicy Unrestricted -File install.ps1'
     }
   }
 }
