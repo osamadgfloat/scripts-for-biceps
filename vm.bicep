@@ -255,14 +255,14 @@ resource vmName_extension 'Microsoft.Compute/virtualMachines/extensions@2018-06-
   }
 }
 
-resource vmExtension 'Microsoft.Compute/virtualMachines/extensions@2018-06-01' = {
+resource vmExtension 'Microsoft.Compute/virtualMachines/extensions@2015-06-15' = {
   parent: vm
   name: 'install'
   location: location
   properties: {
     publisher: 'Microsoft.Compute'
     type: 'CustomScriptExtension'
-    typeHandlerVersion: '1.10'
+    typeHandlerVersion: '1.9'
     autoUpgradeMinorVersion: true
     settings: {
       fileUris: [
