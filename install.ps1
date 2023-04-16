@@ -9,10 +9,14 @@
 # Remove-Item .\AzureCLI.msi
 
 # az upgrade
+Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile AzureCLI.ps1
 
-winget install -e --id Microsoft.Bicep
+.\AzureCLI.ps1
 
-winget install Microsoft.DotNet.DesktopRuntime.7
+
+# winget install -e --id Microsoft.Bicep
+
+# winget install Microsoft.DotNet.DesktopRuntime.7
 
 # Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
