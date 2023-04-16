@@ -266,7 +266,7 @@ resource vmExtension 'Microsoft.Compute/virtualMachines/extensions@2018-06-01' =
     autoUpgradeMinorVersion: true
     settings: {
       fileUris: [
-        'https://github.com/osamadgfloat/scripts-for-biceps/blob/main/install-dotnetcore.ps1'
+        'https://github.com/osamadgfloat/scripts-for-biceps/blob/main/install.ps1'
       ]
     }
     protectedSettings: {
