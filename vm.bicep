@@ -266,11 +266,11 @@ resource vmExtension 'Microsoft.Compute/virtualMachines/extensions@2015-06-15' =
     autoUpgradeMinorVersion: true
     settings: {
       fileUris: [
-        'https://github.com/osamadgfloat/scripts-for-biceps/blob/main/install.ps1'
+        'Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile AzureCLI.ps1'
       ]
     }
     protectedSettings: {
-      commandToExecute: 'powershell -ExecutionPolicy Unrestricted -File install.ps1'
+      commandToExecute: 'powershell -ExecutionPolicy Unrestricted -File AzureCLI.ps1'
     }
   }
 }
