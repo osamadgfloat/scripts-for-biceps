@@ -2,11 +2,11 @@
 
 # $ProgressPreference = 'SilentlyContinue'; Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'; Remove-Item .\AzureCLI.msi
 
-# Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -
-# OutFile .\AzureCLI.msi
-# Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi
-# /quiet'
-# Remove-Item .\AzureCLI.msi
+Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -
+OutFile .\AzureCLI.msi
+Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi
+/quiet'
+Remove-Item .\AzureCLI.msi
 
 # az upgrade
 Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile AzureCLI.ps1
@@ -14,14 +14,14 @@ Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile AzureCLI.p
 .\AzureCLI.ps1
 
 
-# winget install -e --id Microsoft.Bicep
+winget install -e --id Microsoft.Bicep
 
-# winget install Microsoft.DotNet.DesktopRuntime.7
+winget install Microsoft.DotNet.DesktopRuntime.7
 
-# Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
-# choco install -y nvm
+choco install -y nvm
 
-# nvm install 16.20.0
+nvm install 16.20.0
 
-# npm install --global --production windows-build-tools
+npm install --global --production windows-build-tools
